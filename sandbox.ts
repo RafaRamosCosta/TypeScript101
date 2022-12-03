@@ -1,43 +1,23 @@
-// explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+// Dynamic type
+let age: any = 25;
 
-// age = "luigi"; Error
-age = 30;
+age = true;
+console.log(age);
 
-// isLoggedIn = 20; Error
-isLoggedIn = true;
+age = "hello";
+console.log(age);
 
-// arrays
-let fighters: string[] = [];
+age = { name: "Rafa" };
+console.log(age);
 
-fighters.push("luigi");
+let mixed: any[] = [];
 
-// union types
-let mixed: (string | number | boolean)[] = [];
-mixed.push("rafael");
-mixed.push(30);
-mixed.push(true);
+mixed.push(1);
+mixed.push('mario')
+mixed.push(false)
+console.log(mixed)
 
-console.log(mixed);
+let fighter: { name: any, age: any };
 
-let uid: string | number;
-uid = 213;
-uid = "uid";
-
-// object
-let fighter: object; // or fighter: {}
-fighter = { name: "Rafael", belt: "yellow" };
-
-let fighter2: {
-  name: string;
-  belt: string;
-  age: number;
-};
-
-fighter2 = {
-  name: "Rafael",
-  belt: "yellow",
-  age: 18,
-};
+fighter = { name: 'Rafa', age: 25 };
+console.log(fighter);

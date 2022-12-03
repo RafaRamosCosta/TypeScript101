@@ -1,29 +1,16 @@
-// explicit types
-var character;
-var age;
-var isLoggedIn;
-// age = "luigi"; Error
-age = 30;
-// isLoggedIn = 20; Error
-isLoggedIn = true;
-// arrays
-var fighters = [];
-fighters.push("luigi");
-// union types
+// Dynamic type
+var age = 25;
+age = true;
+console.log(age);
+age = "hello";
+console.log(age);
+age = { name: "Rafa" };
+console.log(age);
 var mixed = [];
-mixed.push("rafael");
-mixed.push(30);
-mixed.push(true);
+mixed.push(1);
+mixed.push('mario');
+mixed.push(false);
 console.log(mixed);
-var uid;
-uid = 213;
-uid = "uid";
-// object
-var fighter; // or fighter: {}
-fighter = { name: "Rafael", belt: "yellow" };
-var fighter2;
-fighter2 = {
-    name: "Rafael",
-    belt: "yellow",
-    age: 18
-};
+var fighter;
+fighter = { name: 'Rafa', age: 25 };
+console.log(fighter);
