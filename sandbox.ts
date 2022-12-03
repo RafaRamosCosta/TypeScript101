@@ -1,37 +1,43 @@
-// Arrays:
-let names = ["luigi", "mario", "yoshi"];
+// explicit types
+let character: string;
+let age: number;
+let isLoggedIn: boolean;
 
-names.push("toad");
+// age = "luigi"; Error
+age = 30;
 
-// names.push(3); Error: Argument of type 'number' is not assignable to parameter of type 'string';
-// names[0] = 3;
+// isLoggedIn = 20; Error
+isLoggedIn = true;
 
-let numbers = [10, 20, 30, 40];
+// arrays
+let fighters: string[] = [];
 
-numbers.push(10);
-// numbers.push("Rafa"); Error: Argument of type 'string' is not assignable to parameter of type 'number';
+fighters.push("luigi");
 
-let mixed = ["rafa", 18, "ramos", 13, 222];
+// union types
+let mixed: (string | number | boolean)[] = [];
+mixed.push("rafael");
+mixed.push(30);
+mixed.push(true);
 
-mixed.push(10);
-mixed.push("costa");
-// ----------------------------------------------------------------
+console.log(mixed);
 
-// Objects:
-let fighter = {
-  name: "Rafa",
+let uid: string | number;
+uid = 213;
+uid = "uid";
+
+// object
+let fighter: object; // or fighter: {}
+fighter = { name: "Rafael", belt: "yellow" };
+
+let fighter2: {
+  name: string;
+  belt: string;
+  age: number;
+};
+
+fighter2 = {
+  name: "Rafael",
   belt: "yellow",
   age: 18,
 };
-
-fighter.age = 19;
-fighter.name = "Rafael Ramos Costa";
-// fighter.age = "30"; Error: Argument of type 'string' is not assignable to parameter of type 'number';
-// fighter.skills = ["striking", "gedan mawashi geri"];  Error: Cannot create a new key after the variable declaration
-// fighter = []; Error: Argument of type 'Object' is not assignable to parameter of type 'Array';
-
-fighter = {
-    name: "Leo",
-    belt: "yellow",
-    age: 18,
-}

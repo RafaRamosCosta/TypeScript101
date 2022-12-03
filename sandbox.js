@@ -1,28 +1,29 @@
-// Arrays:
-var names = ["luigi", "mario", "yoshi"];
-names.push("toad");
-// names.push(3); Error: Argument of type 'number' is not assignable to parameter of type 'string';
-// names[0] = 3;
-var numbers = [10, 20, 30, 40];
-numbers.push(10);
-// numbers.push("Rafa"); Error: Argument of type 'string' is not assignable to parameter of type 'number';
-var mixed = ["rafa", 18, "ramos", 13, 222];
-mixed.push(10);
-mixed.push("costa");
-// ----------------------------------------------------------------
-// Objects:
-var fighter = {
-    name: "Rafa",
-    belt: "yellow",
-    age: 18
-};
-fighter.age = 19;
-fighter.name = "Rafael Ramos Costa";
-// fighter.age = "30"; Error: Argument of type 'string' is not assignable to parameter of type 'number';
-// fighter.skills = ["striking", "gedan mawashi geri"];  Error: Cannot create a new key after the variable declaration
-// fighter = []; Error: Argument of type 'Object' is not assignable to parameter of type 'Array';
-fighter = {
-    name: "Leo",
+// explicit types
+var character;
+var age;
+var isLoggedIn;
+// age = "luigi"; Error
+age = 30;
+// isLoggedIn = 20; Error
+isLoggedIn = true;
+// arrays
+var fighters = [];
+fighters.push("luigi");
+// union types
+var mixed = [];
+mixed.push("rafael");
+mixed.push(30);
+mixed.push(true);
+console.log(mixed);
+var uid;
+uid = 213;
+uid = "uid";
+// object
+var fighter; // or fighter: {}
+fighter = { name: "Rafael", belt: "yellow" };
+var fighter2;
+fighter2 = {
+    name: "Rafael",
     belt: "yellow",
     age: 18
 };
