@@ -1,3 +1,19 @@
+const me = {
+    name: "John",
+    age: 30,
+    speak(phrase) {
+        console.log(phrase);
+    },
+    spend(value) {
+        console.log("I spent ", value);
+        return value;
+    },
+};
+console.log(me);
+const greetPerson = (person) => {
+    console.log("hello", person.name);
+};
+greetPerson(me);
 import { Invoice } from "./classes/Invoice.js"; // it has to be the .js file because the browser only interprets javascript
 const invOne = new Invoice("Rafael", "work on the website", 400);
 const invTwo = new Invoice("Leo", "work on the API", 250);
