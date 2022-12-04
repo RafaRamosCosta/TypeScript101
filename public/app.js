@@ -18,21 +18,23 @@ form.addEventListener("submit", (e) => {
     doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
     list.render(doc, type.value, "end");
 });
-// Generics
-// generic can capture the type of what's being passed
-const addUID = (obj) => {
-    let uid = Math.floor(Math.random() * 100);
-    return Object.assign(Object.assign({}, obj), { uid });
-};
-let docOne = addUID({ name: "yoshi", age: 40 });
-console.log(docOne);
-const docThree = {
+// ENUMS
+var ResourceType;
+(function (ResourceType) {
+    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
+    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
+    ResourceType[ResourceType["FILM"] = 2] = "FILM";
+    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
+    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
+})(ResourceType || (ResourceType = {}));
+const docOne = {
     uid: 1,
-    resourceName: "yoshi",
+    resourceName: ResourceType.BOOK,
     data: { name: "rafa", age: 18 },
 };
-const docFour = {
+const docTwo = {
     uid: 1,
-    resourceName: "yoshi",
+    resourceName: ResourceType.PERSON,
     data: ["gloves", "belt", "helmet"],
 };
+console.log(docOne, docTwo);

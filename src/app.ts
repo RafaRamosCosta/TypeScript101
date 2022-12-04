@@ -30,32 +30,31 @@ form.addEventListener("submit", (e: Event) => {
   list.render(doc, type.value, "end");
 });
 
-// Generics
-// generic can capture the type of what's being passed
-const addUID = <T extends { name: string; age: number }>(obj: T) => {
-  let uid: number = Math.floor(Math.random() * 100);
-  return { ...obj, uid };
-};
+// ENUMS
+enum ResourceType {
+  BOOK,
+  AUTHOR,
+  FILM,
+  DIRECTOR,
+  PERSON,
+}
 
-let docOne = addUID({ name: "yoshi", age: 40 });
-
-console.log(docOne);
-
-// with interfaces
 interface Resource<T> {
   uid: number;
-  resourceName: string;
+  resourceName: ResourceType;
   data: T;
 }
 
-const docThree: Resource<object> = {
+const docOne: Resource<object> = {
   uid: 1,
-  resourceName: "yoshi",
+  resourceName: ResourceType.BOOK,
   data: { name: "rafa", age: 18 },
 };
 
-const docFour: Resource<string[]> = {
+const docTwo: Resource<string[]> = {
   uid: 1,
-  resourceName: "yoshi",
+  resourceName: ResourceType.PERSON,
   data: ["gloves", "belt", "helmet"],
 };
+
+console.log(docOne, docTwo);
