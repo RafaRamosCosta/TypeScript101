@@ -1,20 +1,17 @@
 "use strict";
-// Function signatures
-// let greet: Function;
-// ex1
-let greet;
-greet = (name, greeting) => {
-    console.log(`${name} says ${greeting}`);
-};
-// ex2
-let calc;
-calc = (n1, n2, action) => {
-    if (action !== "add")
-        return n1 - n2;
-    return n1 + n2;
-};
-// ex3
-let logDetails;
-logDetails = (fighter) => {
-    console.log(`${fighter.name} is ${fighter.age} years old`);
-};
+// const anchor = document.querySelector("a")!; // the ! tells typescript that it should return some value
+// console.log(anchor.href);
+// // console.log(anchor?.href);
+// const form = document.querySelector("form");
+const form = document.querySelector(".new-item-form"); // uses the form type instead of the element type
+//console.log(form.children);
+// inputs
+const type = document.querySelector("#type");
+const tofrom = document.querySelector("#tofrom");
+const details = document.querySelector("#details");
+const amount = document.querySelector("#amount");
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // method to return value as a number
+    console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});

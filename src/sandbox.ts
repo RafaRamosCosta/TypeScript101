@@ -1,25 +1,24 @@
-// Function signatures
-// let greet: Function;
+// const anchor = document.querySelector("a")!; // the ! tells typescript that it should return some value
 
-// ex1
-let greet: (a: string, b: string) => void;
+// console.log(anchor.href);
 
-greet = (name: string, greeting: string): void => {
-  console.log(`${name} says ${greeting}`);
-};
+// // console.log(anchor?.href);
 
-// ex2
-let calc: (a: number, b: number, c: string) => number;
+// const form = document.querySelector("form");
+const form = document.querySelector(".new-item-form") as HTMLFormElement; // uses the form type instead of the element type
+//console.log(form.children);
 
-calc = (n1: number, n2: number, action: string) => {
-  if (action !== "add") return n1 - n2;
-  return n1 + n2;
-};
+// inputs
+const type = document.querySelector("#type") as HTMLSelectElement;
 
-// ex3
-let logDetails: (obj: { name: string; age: number }) => void;
-type Fighter = { name: string; age: number };
+const tofrom = document.querySelector("#tofrom") as HTMLInputElement;
 
-logDetails = (fighter: Fighter) => {
-  console.log(`${fighter.name} is ${fighter.age} years old`);
-};
+const details = document.querySelector("#details") as HTMLInputElement;
+
+const amount = document.querySelector("#amount") as HTMLInputElement;
+
+form.addEventListener("submit", (e: Event) => {
+  e.preventDefault();
+                                                            // method to return value as a number
+  console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
+});
