@@ -1,20 +1,9 @@
-let greet: Function; // typing a variable as a function
-
-// greet = "hello"; Error
-
-greet = (): void => {
-  console.log("Hello, world!");
+type StringOrNum = string | number;
+type ObjWithName = { name: string; uid: StringOrNum };
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has a uid of ${uid}`);
 };
 
-const add = (n1: number, n2: number, n3?: number): void => {
-  console.log(n1 + n2);
-  console.log(n3);
+const greet = (user: ObjWithName) => {
+  console.log(`${user.name} says hello`);
 };
-
-add(5, 10);
-
-const minus = (n1: number, n2: number): number => {
-    return n1 - n2;
-}
-
-let result = minus(10, 5);
