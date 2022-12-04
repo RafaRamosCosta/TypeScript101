@@ -1,6 +1,9 @@
 "use strict";
 // classes
 class Invoice {
+    // readonly client: string;  readonly => allows only to read client inside or outside the class
+    // private details: string;  private => allows to read and change the details only inside the class
+    // public amount: number;  public => allows to read and change the amount
     constructor(client, details, amount) {
         this.client = client;
         this.details = details;
@@ -15,12 +18,10 @@ const invTwo = new Invoice("Leo", "work on the API", 250);
 let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-console.log(invoices);
-invOne.client = "Mario";
-invTwo.amount = 400;
-// const form = document.querySelector("form");
+invoices.forEach((inv) => {
+    console.log(inv.client, inv.amount, inv.format());
+});
 const form = document.querySelector(".new-item-form"); // uses the form type instead of the element type
-//console.log(form.children);
 // inputs
 const type = document.querySelector("#type");
 const tofrom = document.querySelector("#tofrom");
