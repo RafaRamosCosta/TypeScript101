@@ -23,3 +23,4 @@ type Fighter = { name: string; age: number };
 logDetails = (fighter: Fighter) => {
   console.log(`${fighter.name} is ${fighter.age} years old`);
 };
+
