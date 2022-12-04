@@ -1,7 +1,23 @@
 "use strict";
-// const anchor = document.querySelector("a")!; // the ! tells typescript that it should return some value
-// console.log(anchor.href);
-// // console.log(anchor?.href);
+// classes
+class Invoice {
+    constructor(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    format() {
+        return `${this.client} owes £${this.amount} for ${this.details}!`;
+    }
+}
+const invOne = new Invoice("Rafael", "work on the website", 400);
+const invTwo = new Invoice("Leo", "work on the API", 250);
+let invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+console.log(invoices);
+invOne.client = "Mario";
+invTwo.amount = 400;
 // const form = document.querySelector("form");
 const form = document.querySelector(".new-item-form"); // uses the form type instead of the element type
 //console.log(form.children);

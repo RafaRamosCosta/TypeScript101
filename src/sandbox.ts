@@ -1,8 +1,30 @@
-// const anchor = document.querySelector("a")!; // the ! tells typescript that it should return some value
+// classes
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
+  constructor(client: string, details: string, amount: number) {
+    this.client = client;
+    this.details = details;
+    this.amount = amount;
+  }
 
-// console.log(anchor.href);
+  format(): string {
+    return `${this.client} owes £${this.amount} for ${this.details}!`;
+  }
+}
 
-// // console.log(anchor?.href);
+const invOne = new Invoice("Rafael", "work on the website", 400);
+const invTwo = new Invoice("Leo", "work on the API", 250);
+
+let invoices: Invoice[] = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+
+console.log(invoices);
+
+invOne.client = "Mario";
+invTwo.amount = 400;
 
 // const form = document.querySelector("form");
 const form = document.querySelector(".new-item-form") as HTMLFormElement; // uses the form type instead of the element type
@@ -19,6 +41,6 @@ const amount = document.querySelector("#amount") as HTMLInputElement;
 
 form.addEventListener("submit", (e: Event) => {
   e.preventDefault();
-                                                            // method to return value as a number
+  // method to return value as a number
   console.log(type.value, tofrom.value, details.value, amount.valueAsNumber);
 });
