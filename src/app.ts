@@ -27,5 +27,35 @@ form.addEventListener("submit", (e: Event) => {
 
   doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
 
-  list.render(doc, type.value, 'end');
+  list.render(doc, type.value, "end");
 });
+
+// Generics
+// generic can capture the type of what's being passed
+const addUID = <T extends { name: string; age: number }>(obj: T) => {
+  let uid: number = Math.floor(Math.random() * 100);
+  return { ...obj, uid };
+};
+
+let docOne = addUID({ name: "yoshi", age: 40 });
+
+console.log(docOne);
+
+// with interfaces
+interface Resource<T> {
+  uid: number;
+  resourceName: string;
+  data: T;
+}
+
+const docThree: Resource<object> = {
+  uid: 1,
+  resourceName: "yoshi",
+  data: { name: "rafa", age: 18 },
+};
+
+const docFour: Resource<string[]> = {
+  uid: 1,
+  resourceName: "yoshi",
+  data: ["gloves", "belt", "helmet"],
+};
